@@ -1,0 +1,22 @@
+public static void getFile() {
+		File file = new File("E://test.txt");
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+    //向一个文件中增加文件
+try {
+			FileWriter fw=new FileWriter(file);
+			for(int i=1;i<6;i++){
+				fw.write("追加文件");
+			}
+			fw.close();
+			System.out.println("写入完成");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
